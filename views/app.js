@@ -13,7 +13,8 @@ app.controller('statsCtrl', function($scope){
 
        //Data = array de zboruri
        for(let i = 0; i < data.length; i++) {
-         addRowToTable(data[i].plecare, data[i].intoarcere, data[i].zbor);
+	 if(data[i].plecare != '' && data[i].intoarcere != '')
+         	addRowToTable(data[i].plecare, data[i].intoarcere, data[i].zbor);
        }
     });
   };
