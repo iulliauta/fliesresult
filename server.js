@@ -41,27 +41,27 @@ async.retry(
   }
 );
 
-function getVotes(client) {
-  client.query('SELECT vote, COUNT(id) AS count FROM votes GROUP BY vote', [], function(err, result) {
+function getFlies(client) {
+  client.query('SELECT plecare, intoarcere, zbor FROM zboruri', [], function(err, result) {
     if (err) {
       console.error("Error performing query: " + err);
     } else {
-      var votes = collectVotesFromResult(result);
-      io.sockets.emit("scores", JSON.stringify(votes));
+      var zboruri = collectFliesFromResult(result);
+      io.sockets.emit("zboruri", JSON.stringify(zboruri));
     }
 
     setTimeout(function() {getVotes(client) }, 1000);
   });
 }
 
-function collectVotesFromResult(result) {
-  var votes = {a: 0, b: 0};
+function collectFliesFromResult(result) {
+  var zboruri = [];
 
   result.rows.forEach(function (row) {
-    votes[row.vote] = parseInt(row.count);
+    zboruri.push({plecare : row.plecare, intoarcere : row.intoarcere, zbor : row.zbor});
   });
 
-  return votes;
+  return zboruri;
 }
 
 app.use(cookieParser());
