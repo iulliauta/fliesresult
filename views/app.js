@@ -45,6 +45,11 @@ function addRowToTable(plecare, intoarcere, zbor) {
     cellIntoarcere.appendChild(infoIntoarcere);
     cellZbor.appendChild(infoZbor);
 
+	//add cells to row
+	row.appendChild(cellPlecare);
+	row.appendChild(cellIntoarcere);
+	row.appendChild(cellZbor);
+
     //add row to table
     tableB.appendChild(row);
      
