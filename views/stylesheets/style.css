@@ -14,8 +14,12 @@ body{
   transition: all 1s linear;
 }
 
+table {
+ margin: 0 auto;
+}
+
 #tab-head {
-  background: #22a6b3;
+  background: #63cdda;
 }
 
 #tab-head th {
@@ -27,11 +31,11 @@ td {
 }
 
 tr:nth-child(odd){
-  background-color: #dfe4ea;
+  background-color: #ffffff;
 }
 
 tr:nth-child(even) {
-  background: #ced6e0;
+  background: #f1f2f6;
 }
 
 .divider{
