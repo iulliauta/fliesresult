@@ -37,11 +37,11 @@ async.retry(
       return console.error("Giving up");
     }
     console.log("Connected to db");
-    getFlies(client);
+    getVotes(client);
   }
 );
 
-function getFlies(client) {
+function getVotes(client) {
   client.query('SELECT plecare, intoarcere, zbor FROM zboruri', [], function(err, result) {
     if (err) {
       console.error("Error performing query: " + err);
