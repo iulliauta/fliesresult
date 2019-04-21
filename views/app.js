@@ -4,7 +4,7 @@ var socket = io.connect({transports:['polling']});
 app.controller('statsCtrl', function($scope){
 
   var updateScores = function(){
-    socket.on('zbor', function (json) {
+    socket.on('zboruri', function (json) {
        data = JSON.parse(json);
        tableB = document.getElementById('tab-zboruri');
        tableH = document.getElementById("tab-head");
