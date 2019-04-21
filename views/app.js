@@ -12,12 +12,8 @@ app.controller('statsCtrl', function($scope){
        tableB.appendChild(tableH);
 
        //Data = array de zboruri
-       for(let i = 0; i < data.lenght; i++) {
-         let plecare = data[i].plecare,
-             intoarcere = data[i].intoarcere,
-             zbor = data[i].zbor;
-
-         addRowToTable(plecare, intoarcere, zbor);
+       for(let i = 0; i < data.length; i++) {
+         addRowToTable(data[i].plecare, data[i].intoarcere, data[i].zbor);
        }
     });
   };
