@@ -14,6 +14,26 @@ body{
   transition: all 1s linear;
 }
 
+#tab-head {
+  background: #22a6b3;
+}
+
+#tab-head th {
+  padding: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+tr:nth-child(odd){
+  background-color: #dfe4ea;
+}
+
+tr:nth-child(even) {
+  background: #ced6e0;
+}
+
 .divider{
   height: 150px;
   width:2px;
